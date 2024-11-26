@@ -1,0 +1,49 @@
+<h2>Card Manager</h2>
+<!-- <div *ngIf="card" appHighlightCard>
+  <div class="card">{{ card.name | cardNameFormatter }}</div>
+</div> -->
+
+<div style="margin: 10px; display: flex; justify-content: space-between">
+  <button (click)="onToggleLoadingCard()">Toggle Loading Card</button>
+  <button (click)="onFetchPokemon('25')">Get Pikachu!</button>
+  <button (click)="onSimulateLoading()">Simulate Loading</button>
+  <button (click)="onToggleSpinner()">Toggle Spinner</button>
+</div>
+
+<div class="spinner" #spinner style="display: none">
+  <p>Loading...</p>
+</div>
+
+<div style="margin: 10px">
+  <input [(ngModel)]="searchString" placeholder="Enter Pokemon name or ID" />
+  <button (click)="onSearch()">Find!</button>
+</div>
+
+<div
+  class="card"
+  *ngIf="pokemonCard; else loading"
+  [ngClass]="pokemonCard.types[0]"
+>
+  <h1>{{ pokemonCard.name | cardNameFormatter }}</h1>
+  <img [src]="pokemonCard.frontImage" alt="{{ pokemonCard.name }}" />
+  <p>Weight: {{ pokemonCard.weight }}</p>
+  <ul>
+    <li *ngFor="let type of pokemonCard.types">{{ type }}</li>
+  </ul>
+</div>
+
+<div *ngIf="hideLoadingCard; else loading"></div>
+
+<ng-template #loading>
+  <div class="hiddenCard">
+    <div class="loading-indicator" title="Not loaded">
+      <span class="exclamation">!</span>
+    </div>
+  </div>
+</ng-template>
+
+<!-- <ng-template #empty>
+  <div class="hiddenCard">
+    <p>Loading Pokémon data...</p>
+  </div>
+</ng-template> -->

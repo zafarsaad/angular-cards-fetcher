@@ -1,3 +1,13 @@
+# Project Details
+
+A basic project to use standalone components, services, directives, pipes and more with Angular. Currently the MVP is a "Pokemon Card" fetcher which loads Charmander on load but the user can input a number or name and get that specific Pokemon.
+
+Phase 1 is complete. Next phases will add proper error handling, retrieving multiple pokemon, caching fetched data locally, building your own collection (favorites) of cards.
+
+This project will evolve most likely into a "Pokedex" with styling, animations and sounds.
+
+This project is intended to be used as a foundation for card-building and battling games.
+
 # AngularCardsFetcher
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
